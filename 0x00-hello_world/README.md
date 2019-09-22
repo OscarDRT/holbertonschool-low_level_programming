@@ -15,3 +15,5 @@
 6. Size is not grandeur, and territory does not make a nation
 
 8. Intel
+
+9 . Quote
