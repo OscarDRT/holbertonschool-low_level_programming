@@ -1,5 +1,5 @@
 #include <stdio.h>
-​
+
 /**
  * main - Entry point
  *
@@ -20,6 +20,7 @@ if (l != '8' || n != '9')
 {
 putchar(',');
 putchar (' ');
+}
 }
 }
 putchar('\n');
