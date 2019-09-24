@@ -1,4 +1,8 @@
 #include "holberton.h"
+
+/**
+ * print_alphabet_x10 - print x10 alphabet of a to z
+ */
 void print_alphabet_x10(void)
 {
 char c;

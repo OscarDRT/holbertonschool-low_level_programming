@@ -1,5 +1,8 @@
 #include "holberton.h"
-/*print_alphabet - print a to z */
+
+/**
+ * print_alphabet - print a to z
+ */
 void print_alphabet(void)
 {
 char c;
