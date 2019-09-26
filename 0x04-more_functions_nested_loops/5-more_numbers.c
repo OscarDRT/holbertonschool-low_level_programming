@@ -1,15 +1,19 @@
 #include "holberton.h"
 
 /**
- * more_numbers - print 10 times the number, from 0 to 14
+ * help - print only modulo of a number
  *
- * Return: void
+ * @mod: argument for help
  */
 void help(int mod)
 {
 	_putchar(mod + '0');
 }
-
+/**
+ * more_numbers - print 10 times the number, from 0 to 14
+ *
+ * Return: void
+ */
 void more_numbers(void)
 {
 	int num1, num2, mod, div;
