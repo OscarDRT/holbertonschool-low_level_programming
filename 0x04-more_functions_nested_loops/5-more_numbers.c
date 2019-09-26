@@ -5,6 +5,11 @@
  *
  * Return: void
  */
+void help(int mod)
+{
+	_putchar(mod + '0');
+}
+
 void more_numbers(void)
 {
 	int num1, num2, mod, div;
@@ -18,13 +23,13 @@ void more_numbers(void)
 			if (num2 >= 10)
 			{
 				_putchar(div + '0');
-				_putchar(mod + '0');
+				help(mod);
 			}
 			else
 			{
-				_putchar(mod + '0');
+				help(mod);
 			}
 		}
-	_putchar('\n');
+		_putchar('\n');
 	}
 }
