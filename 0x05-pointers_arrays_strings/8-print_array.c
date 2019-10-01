@@ -2,7 +2,10 @@
 #include <stdio.h>
 
 /**
+ * print_array - prints n elements of an array
  *
+ * @a: function parameter
+ * @n: function parameter
  */
 void print_array(int *a, int n)
 {
@@ -10,7 +13,7 @@ void print_array(int *a, int n)
 
 	for (b = 0; b < n; b++)
 	{
-		if (b == (n -1))
+		if (b == (n - 1))
 		{
 			printf("%d", a[b]);
 		}
