@@ -1,7 +1,9 @@
 #include "holberton.h"
 
 /**
+ * print_rev - print character string upside down
  *
+ * @s: function parameter
  */
 void print_rev(char *s)
 {
