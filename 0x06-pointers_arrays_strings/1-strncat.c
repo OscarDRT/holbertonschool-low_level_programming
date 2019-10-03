@@ -5,6 +5,7 @@
  *
  * @dest: receive a string
  * @src : send a string
+ * @n: bytes from src
  *
  * Return: Always dest
  */
