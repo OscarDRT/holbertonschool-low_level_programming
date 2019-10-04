@@ -19,7 +19,7 @@ char *leet(char *p)
 		{
 			if (p[a] == ini[b])
 			{
-				p[a] == fin[b];
+				p[a] = fin[b];
 			}
 		}
 	}
