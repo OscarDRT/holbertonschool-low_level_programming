@@ -10,9 +10,9 @@
 char *rot13(char *p)
 {
 	int a, b;
-	
 	char ma[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char mi[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
 	for (a = 0; p[a] != '\0'; a++)
 	{
 		for (b = 0; ma[b] != '\0'; b++)
