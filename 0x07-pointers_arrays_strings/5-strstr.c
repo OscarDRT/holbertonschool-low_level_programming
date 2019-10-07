@@ -1,23 +1,33 @@
 #include "holberton.h"
 
 /**
+ * _strstr - function that locates a substring
  *
+ * @haystack: function parameter
+ * @needle: function parameter
+ *
+ * Return: haystack
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int a, b, c;
+	int cont;
 
-	for (a = 0; haystack[a] != '\0'; a++)
+	cont = 0;
+	while (*haystack != '\0')
 	{
-		for (b = 0, c = 0; needle[c] != '\0'; b++, c++)
+		while (*haystack == *needle && *haystack != '\0' && *needle != '\0')
 		{
-			if (haystack[b] != needle[c] || haystack[b] == '\0')
-			{
-				break;
-			}
+			haystack++;
+			needle++;
+			cont++;
 		}
-		if (needle[c] == '\0')
-			return (haystack + i);
+		if (needle == '\0')
+		{
+			return (haystack - cont);
+		}
+		haystack = haystack - cont + 1;
+		needle = needle - cont;
 	}
+	
 	return (0);
 }
