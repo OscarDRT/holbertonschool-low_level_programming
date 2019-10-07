@@ -21,7 +21,11 @@ char *_strchr(char *s, char c)
 		if (s[i] == c)
 		{
 			break;
+			return (s);
+		}
+		else
+		{
+			return (0);
 		}
 	}
-	return (*p);
 }
