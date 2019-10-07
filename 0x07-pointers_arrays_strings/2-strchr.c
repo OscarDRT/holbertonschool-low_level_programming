@@ -12,10 +12,10 @@ char *_strchr(char *s, char c)
 {
 	while (*s != c)
 	{
-		s = s + 1;
+		s++;
 		if (!*s)
 		{
-			return (NULL);
+			return (0);
 		}
 	}
 	return (s);
