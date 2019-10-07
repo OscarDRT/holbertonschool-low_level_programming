@@ -15,10 +15,9 @@ char *_strchr(char *s, char c)
 	p = s;
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		s++;
 		if (s[i] == c)
 		{
-			return (s);
+			return (s + i);
 		}
 	}
 	return (s + i);
