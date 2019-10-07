@@ -21,7 +21,7 @@ int main(void)
 		{
 			ttal = ttal + c;
 		}
-		printf("%ld\n", ttal);
-		return (0);
 	}
+	printf("%ld\n", ttal);
+	return (0);
 }
