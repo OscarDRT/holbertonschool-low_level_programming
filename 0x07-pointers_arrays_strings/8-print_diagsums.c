@@ -17,11 +17,8 @@ void print_diagsums(int *a, int size)
 	{
 		sumad1 = a[cont];
 	}
-<<<<<<< HEAD
 	for (cont = size - 1; cont < (size * size) - (size - 1); cont = cont + size - 1)
-=======
 	for (fila = size - 1; fila >= 0; fila--)
->>>>>>> 90180cfc03bddf6bc5ab0b775f28af39bf402fc6
 	{
 		sumad2 = a[cont];
 	}
