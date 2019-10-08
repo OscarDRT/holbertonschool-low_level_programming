@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -13,12 +12,11 @@ void print_diagsums(int *a, int size)
 
 	sumad1 = 0;
 	sumad2 = 0;
-	for (cont = 0; cont < (size * size); cont = cont + size + 1)
+	for (cont = 0; cont < (size * size); cont += size + 1)
 	{
 		sumad1 = a[cont];
 	}
-	for (cont = size - 1; cont < (size * size) - (size - 1); cont = cont + size - 1)
-	for (fila = size - 1; fila >= 0; fila--)
+	for (cont = size - 1; cont < (size * size) - (size - 1); cont += size - 1)
 	{
 		sumad2 = a[cont];
 	}
