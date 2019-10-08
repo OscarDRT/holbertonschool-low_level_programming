@@ -4,25 +4,21 @@
  * print_diagsums - function that prints the sum of the two diagonals
  *
  * @a: parameter
- * @size: size array[size][size]
+ * @size: size a
  */
 void print_diagsums(int *a, int size)
 {
-	int fila, columna, sumad1, sumad2;
+	int cont; sumad1, sumad2;
 
 	sumad1 = 0;
 	sumad2 = 0;
-	for (fila = 0; fila < size; fila++)
+	for (cont = 0; cont < (size * size); cont = cont + size + 1)
 	{
-		sumad1 = sumad1 + a[fila][fila];
+		sumad1 = a[cont];
 	}
-	printf("%d", sumad1);
-	for (fila = size - 1; fila >= 0; fila--)
+	for (cont = size - 1; cont < (size * size) - (size - 1); cont = cont + size - 1)
 	{
-		for (columna = 0; columna < size; columna++)
-		{
-			sumad2 = sumad2 + a[fila][columna];
-		}
+		sumad2 = a[cont];
 	}
-	printf("%d", sumad2);
+	printf("%d, %d\n", sumad1, sumad2);
 }
