@@ -19,5 +19,5 @@ void print_diagsums(int *a, int size)
 	{
 		sumad2 = sumad2 + a[con];
 	}
-	printf("%d, %d\n", sumd1, sumad2);
+	printf("%d, %d\n", sumad1, sumad2);
 }
