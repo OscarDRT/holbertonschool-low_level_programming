@@ -1,24 +1,24 @@
 #include <stdio.h>
 
 /**
- * print_diagsums - function that prints the sum of the two diagonals
- *
- * @a: parameter
- * @size: size a
- */
+* print_diagsums - sums diags of a
+*
+* @a: function parameter
+* @size: function parameter
+*/
 void print_diagsums(int *a, int size)
 {
-	int cont; sumad1, sumad2;
+	int con, sumad1, sumad2;
 
 	sumad1 = 0;
 	sumad2 = 0;
-	for (cont = 0; cont < (size * size); cont += size + 1)
+	for (con = 0; i < size * size; con += (size + 1))
 	{
-		sumad1 = a[cont];
+		sumad1 += a[con];
 	}
-	for (cont = size - 1; cont < (size * size) - (size - 1); cont += size - 1)
+	for (con = size - 1; i < (size * size) - (size - 1); con += (size - 1))
 	{
-		sumad2 = a[cont];
+		sumad2 += a[con];
 	}
 	printf("%d, %d\n", sumad1, sumad2);
 }
