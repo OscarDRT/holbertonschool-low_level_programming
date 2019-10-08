@@ -2,10 +2,7 @@
 
 /**
  * print_chessboard - print ajedrez
- *
  * @a: function parameter
- *
- * Return: void
  */
 void print_chessboard(char (*a)[8])
 {
