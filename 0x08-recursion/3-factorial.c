@@ -1,7 +1,11 @@
 #include "holberton.h"
 
 /**
+ * factorial - calculate factorial a number n
  *
+ * @n: function parameter
+ *
+ * Return: integer factorial
  */
 int factorial(int n)
 {
