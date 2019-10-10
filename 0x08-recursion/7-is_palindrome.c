@@ -9,7 +9,7 @@
  */
 int compare(char *s, int x, int lon)
 {
-	if (x < b)
+	if (x < lon)
 	{
 		if (s[x] == s[lon])
 			return (compare(s, x + 1, lon - 1));
