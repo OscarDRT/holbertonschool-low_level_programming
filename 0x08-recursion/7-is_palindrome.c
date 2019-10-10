@@ -1,15 +1,32 @@
 #include "holberton.h"
 
 /**
- * _strlen_recursion - return lenght string
- *
- * @s: char type parameter
- *
- * Return: length string
+ * help - find a string palindrome
+ * @s: parameter pointer
+ * @x: parameter
+ * @lon: parameter
+ * Return: 1 if the string is a palindrome, 0 if it is not
+ */
+int compare(char *s, int x, int lon)
+{
+	if (x < b)
+	{
+		if (s[x] == s[lon])
+			return (compare(s, x + 1, lon - 1));
+		else
+			return (0);
+	}
+	return (1);
+}
+
+/**
+ * _strlen_recursion - lenght of a string
+ * @s: parameter
+ * Return: The length
  */
 int _strlen_recursion(char *s)
 {
-	if (!*s)
+	if (*s == '\0')
 	{
 		return (0);
 	}
@@ -17,46 +34,14 @@ int _strlen_recursion(char *s)
 }
 
 /**
- *
- */
-void help(char *inicio, char *fin, int *re, int lon)
-{
-	if (*inicio != *fin)
-	{
-		*re = 0;
-		return;
-	}
-	if (*inicio == *fin && *inicio && *fin)
-	{
-		inicio++;
-		fin--;
-		*re = 1;
-		help(inicio, fin, re, lon);
-	}
-}
-
-/**
- *
+ * is_palindrome - find if a string is palindrome
+ * @s: a pointer to the first value of the string
+ * Return: 1 if the string is a palindrome, 0 in otherwise
  */
 int is_palindrome(char *s)
 {
+	int x = 0;
 	int lon;
-	int ret = 0;
-	int *re = &ret;
-	char *fin;
-	char *inicio;
 
 	lon = _strlen_recursion(s);
-	inicio = s;
-	fin = s;
-	if(*s)
-	{
-		fin++;
-	}
-	help(inicio, fin, re, lon);
-	if (!*s && !*fin)
-	{
-		return (1);
-	}
-	return (ret);
 }
