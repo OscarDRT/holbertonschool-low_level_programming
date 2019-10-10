@@ -1,7 +1,11 @@
 #include "holberton.h"
 
 /**
+ * help - prime number
  *
+ * @ptr: function parameter
+ * @pt: function parameter
+ * @x: function parameter
  */
 void help(int *ptr, int *pt, int x)
 {
@@ -20,7 +24,11 @@ void help(int *ptr, int *pt, int x)
 }
 
 /**
+* is_prime_number - is prime?
 *
+* @n: function parameter
+*
+* Return: Alway ret
 */
 int is_prime_number(int n)
 {
@@ -28,7 +36,7 @@ int is_prime_number(int n)
 	int *pt = &ret;
 	int mov = 2;
 	int *ptr = &mov;
-	
+
 	help(ptr, pt, n);
 	ret = *pt;
 	if (n <= 1)
