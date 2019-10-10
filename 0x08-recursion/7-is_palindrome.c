@@ -7,12 +7,12 @@
  * @lon: parameter
  * Return: 1 if the string is a palindrome, 0 if it is not
  */
-int compare(char *s, int x, int lon)
+int help(char *s, int x, int lon)
 {
 	if (x < lon)
 	{
 		if (s[x] == s[lon])
-			return (compare(s, x + 1, lon - 1));
+			return (help(s, x + 1, lon - 1));
 		else
 			return (0);
 	}
@@ -26,7 +26,7 @@ int compare(char *s, int x, int lon)
  */
 int _strlen_recursion(char *s)
 {
-	if (*s == '\0')
+	if (!*s)
 	{
 		return (0);
 	}
@@ -40,8 +40,10 @@ int _strlen_recursion(char *s)
  */
 int is_palindrome(char *s)
 {
-	int x = 0;
+	int x;
 	int lon;
 
+	x = 0;
 	lon = _strlen_recursion(s);
+	return (help(s, x, lon - 1));
 }
