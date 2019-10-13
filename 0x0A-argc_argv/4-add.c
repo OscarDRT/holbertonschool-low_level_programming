@@ -14,36 +14,20 @@ int main(int argc, char *argv[])
 	int i, suma = 0;
 	char *ptr;
 
-	if (argc > 1)
+	for (i = 1; i < argc; i++)
 	{
-
-		for (i = 1; i < argc; i++)
+		ptr = argv[i];
+		while (*ptr)
 		{
-			ptr = argv[i];
-			while(*ptr)
+			if (*ptr < 47 || *ptr > 57)
 			{
-				if (atoi(argv[i]) < 0)
-				{
-					printf("Error\n");
-					return (1);
-				}
-				if (*ptr < 47 || *ptr > 57)
-				{
-					printf("Error\n");
-					return (1);
-				}
-				if (atoi(argv[i]))
-				{
-					suma += atoi(argv[i]);
-				}
-				ptr++;
+				printf("Error\n");
+				return (1);
 			}
+			ptr++;
 		}
-		printf("%d\n", suma);
+		suma = suma + atoi(argv[i]);
 	}
-	else
-	{
-		printf("0\n");
-	}
+	printf("%d\n", suma);
 	return (0);
 }
