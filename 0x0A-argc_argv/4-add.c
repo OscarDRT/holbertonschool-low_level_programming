@@ -12,24 +12,31 @@
 int main(int argc, char *argv[])
 {
 	int i, suma = 0;
+	char *ptr;
 
 	if (argc > 1)
 	{
+
 		for (i = 1; i < argc; i++)
 		{
-			if (atoi(argv[i]) < 0)
+			ptr = argv[i];
+			while(*ptr)
 			{
-				printf("Error\n");
-				return (1);
-			}
-			if (!atoi(argv[i]))
-			{
-				printf("Error\n");
-				return (1);
-			}
-			if (atoi(argv[i]))
-			{
-				suma += atoi(argv[i]);
+				if (atoi(argv[i]) < 0)
+				{
+					printf("Error\n");
+					return (1);
+				}
+				if (*ptr < 47 || *ptr > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
+				if (atoi(argv[i]))
+				{
+					suma += atoi(argv[i]);
+				}
+				ptr++;
 			}
 		}
 		printf("%d\n", suma);
