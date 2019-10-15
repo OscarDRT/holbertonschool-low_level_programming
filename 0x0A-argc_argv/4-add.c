@@ -11,26 +11,23 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, suma = 0;
+	char *ptr;
 
-	if (argc == 1)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0");
-	}
-	for (i = 0; i < argc; i++)
-	{
-		if (*argv[i] < 0)
+		ptr = argv[i];
+		while (*ptr)
 		{
-			printf("Error\n");
-			return (1);
+			if (*ptr < 47 || *ptr > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			ptr++;
 		}
-		if (*argv[i] >= 0 && *argv[i] <= 47 || *argv[i] >= 58 && *argv[i] <= 127)
-		{
-			printf("Error\n");
-			return (1);
-		}
-		sum += atoi(argv[i]);
+		suma = suma + atoi(argv[i]);
 	}
-	printf("%d\n", sum);
+	printf("%d\n", suma);
 	return (0);
 }
