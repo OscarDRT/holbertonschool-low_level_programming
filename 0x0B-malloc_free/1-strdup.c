@@ -12,6 +12,7 @@ char *_strdup(char *str)
 {
 	int i, tam = 0;
 	char *copy;
+
 	while (str[tam] != '\0')
 	{
 		tam++;
