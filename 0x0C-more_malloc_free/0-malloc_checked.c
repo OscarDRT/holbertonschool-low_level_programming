@@ -11,8 +11,12 @@
 void *malloc_checked(unsigned int b)
 {
 	void *ptr;
-
-	ptr = malloc(b * sizeof(unsigned int));
+	
+	if ( b == 0)
+	{
+		exit(98);
+	}
+	ptr = malloc(b);
 	if (ptr == NULL || b == INT_MAX)
 	{
 		exit(98);
