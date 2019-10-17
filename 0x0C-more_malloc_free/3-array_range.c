@@ -8,10 +8,10 @@
  * @max: value max
  * Return: NULL or ptr
  */
- int *array_range(int min, int max)
+int *array_range(int min, int max)
 {
 	int cont, i;
-    int *ptr;
+	int *ptr;
 
 	if (min > max)
 	{
@@ -28,5 +28,5 @@
 				ptr[i] = cont;
 				cont++;
 			}
-            return (ptr);
+	return (ptr);
 }
