@@ -10,21 +10,19 @@
  * Return: NULL or ptr or p
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
-
-	unsigned int tam, i;
+{
+	unsigned int i;
 	char *p;
 
-	if (old_size == new_size)
+	if (new_size == old_size)
 	{
 		return (ptr);
 	}
-	if (old_size < new_size)
+	if (ptr == NULL)
 	{
-		tam = old_size;
+		return (malloc(new_size));
 	}
-	else
-		tam = new_size;
-	if (new_size == 0)
+	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
@@ -32,13 +30,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	p = malloc(new_size);
 	if (p == NULL)
 	{
-		return (NULL);
+		return (ptr);
 	}
-	if (ptr == NULL)
-	{
-		return (p);
-	}
-	for (i = 0; i < tam; i++)
+	for (i = 0; i < new_size; i++)
 	{
 		p[i] = ((char *)ptr)[i];
 	}
