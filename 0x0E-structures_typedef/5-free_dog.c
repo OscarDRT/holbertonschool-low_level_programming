@@ -3,7 +3,7 @@
 
 /**
  * free_dog - free allocated memory for struct dog
- * @
+ * @d: function parameter
  */
 void free_dog(dog_t *d)
 {
