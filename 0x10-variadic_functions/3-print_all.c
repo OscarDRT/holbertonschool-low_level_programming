@@ -41,10 +41,9 @@ void print_all(const char *const format, ...)
 			a = 0;
 			break;
 		}
-		cont++;
 		if ((a == 1) && format[cont + 1] != '\0')
 			printf(", ");
-
+		cont++;
 	}
 	va_end(valist);
 	printf("\n");
