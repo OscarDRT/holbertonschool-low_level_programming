@@ -6,27 +6,24 @@
  */
 void print_all(const char *const format, ...)
 {
-	int i, cont = 0;
-	double j;
+	int a, cont = 0;
 	char *p;
 	va_list valist;
 
 	va_start(valist, format);
 	while (format[cont] != '\0')
 	{
+		a = 1;
 		switch (format[cont])
 		{
 		case 'c':
-			i = va_arg(valist, int);
-			printf("%c", i);
+			printf("%c", va_arg(valist, int));
 			break;
 		case 'i':
-			i = va_arg(valist, int);
-			printf("%d", i);
+			printf("%d", va_arg(valist, int));
 			break;
 		case 'f':
-			j = va_arg(valist, double);
-			printf("%f", j);
+			printf("%f", va_arg(valist, double));
 			break;
 		case 's':
 			p = va_arg(valist, char *);
@@ -37,10 +34,10 @@ void print_all(const char *const format, ...)
 			printf("%s", p);
 			break;
 		default:
+			a = 0;
 			break;
 		}
-		if ((format[cont] == 'c' || format[cont] == 'i'
-		 || format[cont] == 'f' || format[cont] == 's') && format[cont + 1] != '\0')
+		if (a && format[cont] && format[cont + 1] != '\0')
 			printf(", ");
 		cont++;
 	}
