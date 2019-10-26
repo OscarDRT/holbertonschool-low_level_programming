@@ -6,12 +6,11 @@
  */
 void print_all(const char *const format, ...)
 {
-	int i, cont;
+	int i, cont = 0;
 	double j;
 	char *p;
 	va_list valist;
 
-	cont = 0;
 	va_start(valist, format);
 	while (format[cont] != '\0')
 	{
