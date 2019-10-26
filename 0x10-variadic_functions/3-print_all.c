@@ -6,7 +6,7 @@
  */
 void print_all(const char *const format, ...)
 {
-	int i, cont, a;
+	int i, cont;
 	double j;
 	char *p;
 	va_list valist;
@@ -20,28 +20,23 @@ void print_all(const char *const format, ...)
 		case 'c':
 			i = va_arg(valist, int);
 			printf("%c", i);
-			a = 1;
 			break;
 		case 'i':
 			i = va_arg(valist, int);
 			printf("%d", i);
-			a = 1;
 			break;
 		case 'f':
 			j = va_arg(valist, double);
 			printf("%f", j);
-			a = 1;
 		case 's':
 			p = va_arg(valist, char *);
 			if (p == NULL)
 				p = "(nil)";
 			printf("%s", p);
-			a = 1;
 		default:
-			a = 0;
 			break;
 		}
-		if ((a == 1) && format[cont + 1] != '\0')
+		if ((format[cont] == 'c' || format[cont] == 'i' || format[cont] == 'f' || format[cont] == 's') && format[cont + 1] != '\0')
 			printf(", ");
 		cont++;
 	}
