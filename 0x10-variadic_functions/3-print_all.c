@@ -37,7 +37,7 @@ void print_all(const char *const format, ...)
 			a = 0;
 			break;
 		}
-		if (a && format[cont] && format[cont + 1] != '\0')
+		if (a && format[cont + 1] != '\0')
 			printf(", ");
 		cont++;
 	}
