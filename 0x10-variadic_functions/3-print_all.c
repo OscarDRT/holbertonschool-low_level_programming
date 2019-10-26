@@ -37,6 +37,7 @@ void print_all(const char *const format, ...)
 			printf("%s", p);
 			a = 1;
 		default:
+			cont++;
 			a = 0;
 			break;
 		}
