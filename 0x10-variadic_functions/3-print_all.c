@@ -1,49 +1,50 @@
 #include "variadic_functions.h"
-
 /**
- * print_all - function that prints anything
- * @format: list of types of arguments passed to the function
+ * print_all - This function will print anything
+ * @format: Format of the entry
+ * Return: No return
  */
+
 void print_all(const char *const format, ...)
 {
-	int i, cont, a;
+	int i;
+	int cont = 0;
 	double j;
-	char *p;
-	va_list valist;
+	char *s;
+	va_list list;
 
-	va_start(valist, format);
+	va_start(list, format);
 	while (format[cont] != '\0')
 	{
-		switch (format[cont])
+		switch (format[k])
 		{
 		case 'c':
-			i = va_arg(valist, int);
+			i = va_arg(list, int);
 			printf("%c", i);
-			a = 1;
 			break;
 		case 'i':
-			i = va_arg(valist, int);
+			i = va_arg(list, int);
 			printf("%i", i);
-			a = 1;
 			break;
 		case 'f':
-			j = va_arg(valist, double);
+			j = va_arg(list, double);
 			printf("%f", j);
-			a = 1;
+			break;
 		case 's':
-			p = va_arg(valist, char *);
-			if (p == NULL)
-				p = "(nil)";
-			printf("%s", p);
-			a = 1;
-		default:
-			cont++;
-			a = 0;
+			s = va_arg(list, char *);
+			if (s == NULL)
+			{
+				s = "(nil)";
+			}
+			printf("%s", s);
 			break;
 		}
-		if ((a == 1) && format[cont + 1] != '\0')
+		if ((format[cont] == 'c' || format[cont] == 'i' ||
+		     format[cont] == 'f' || format[cont] == 's') &&
+		    format[cont + 1] != '\0')
 			printf(", ");
-			cont++;
+		cont++;
 	}
+	va_end(list);
 	printf("\n");
 }
