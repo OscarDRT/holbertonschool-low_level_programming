@@ -40,7 +40,8 @@ void print_all(const char *const format, ...)
 		default:
 			break;
 		}
-		if ((format[cont] == 'c' || format[cont] == 'i' || format[cont] == 'f' || format[cont] == 's') && format[cont + 1] != '\0')
+		if ((format[cont] == 'c' || format[cont] == 'i'
+		 || format[cont] == 'f' || format[cont] == 's') && format[cont + 1] != '\0')
 			printf(", ");
 		cont++;
 	}
