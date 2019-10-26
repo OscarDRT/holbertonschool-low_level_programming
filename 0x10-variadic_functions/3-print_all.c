@@ -1,8 +1,7 @@
 #include "variadic_functions.h"
 /**
- * print_all - This function will print anything
+ * print_all - function will print anything
  * @format: Format of the entry
- * Return: No return
  */
 
 void print_all(const char *const format, ...)
