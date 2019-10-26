@@ -11,7 +11,7 @@ void print_all(const char *const format, ...)
 	va_list valist;
 
 	va_start(valist, format);
-	while (format[cont] != '\0')
+	while (format[cont] != '\0' && format)
 	{
 		a = 1;
 		switch (format[cont])
