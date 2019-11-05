@@ -5,6 +5,7 @@
  * at index index of a listint_t linked list
  * @head: contains the header of the list
  * @index: number of node for delete
+ * Return: 1 or -1
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
