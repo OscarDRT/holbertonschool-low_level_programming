@@ -20,7 +20,7 @@ unsigned int _strlen(const char *s)
 }
 
 /**
- * _pow_recursion - returns the value of x raised to the power of y
+ * _pow - returns the value of x raised to the power of y
  *
  * @x: function parameter
  * @y: function parameter
@@ -40,15 +40,19 @@ unsigned int _pow(int x, int y)
 	return (x * _pow(x, y - 1));
 }
 /**
- * binary_to_uint - 
+ * binary_to_uint - function that converts a binary number to an unsigned int
+ * @b: is pointing to a string of 0 and 1 chars
+ * Return: the converted number, or 0 if
  */
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int str, num, num10 = 0;
 	unsigned int pos, pow;
 
+	if (b == NULL)
+		return (0);
 	str = _strlen(b);
-	for (pos = (str -1), pow = 0; pow < str; pos--, pow++)
+	for (pos = (str - 1), pow = 0; pow < str; pos--, pow++)
 	{
 		if (b[pos] != '1' && b[pos] != '0')
 			return (0);
