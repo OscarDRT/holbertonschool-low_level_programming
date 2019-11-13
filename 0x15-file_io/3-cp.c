@@ -10,7 +10,7 @@ int main(int ac, char *av[])
 {
 	int fd_O, fd_D, aux;
 	char buff[1024];
-	int per = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
+	mode_t per = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
