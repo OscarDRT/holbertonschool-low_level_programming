@@ -17,16 +17,13 @@ int main(int ac, char *av[])
 	fd_O = open(av[1], O_RDONLY);
 	if (fd_O == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-	fd_D = open(av[2], O_CREAT | O_WRONLY | O_APPEND | O_TRUNC, per);
+	fd_D = open(av[2], O_CREAT | O_WRONLY | O_APPEND, per);
 	if (fd_D == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	while ((aux = read(fd_O, buff, 1024)) > 0)
 	{
 		if (write(fd_D, buff, aux) != aux)
-		{
-			dprintf(STDERR_FILENO, "EError: Can't write to %s\n", av[2]);
-			exit(99);
-		}
+			dprintf(STDERR_FILENO, "EError: Can't write to %s\n", av[2]), exit(99);
 	}
 	if (aux == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
