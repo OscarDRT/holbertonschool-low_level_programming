@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 		aux2 = write(fdnew, buff, aux);
-		if (aux2 == -1)
+		if (aux2 < aux)
 		{
 			dprintf(STDERR_FILENO, "EError: Can't write to %s\n", argv[2]);
 			exit(99);
