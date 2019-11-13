@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	fd_D = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, per);
 	if (fd_D == -1)
 	{
-		dprintf(STDERR_FILENO, "EError: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((aux = read(fd_O, buff, 1024)) > 0)
