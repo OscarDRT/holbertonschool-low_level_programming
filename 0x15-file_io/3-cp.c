@@ -34,5 +34,5 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", fd_O), exit(100);
 	if (close(fd_D) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", fd_D), exit(100);
-	return (1);
+	return (0);
 }
