@@ -30,9 +30,7 @@ int main(int ac, char *av[])
 	}
 	if (aux == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-	if (close(fd_O) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", fd_O), exit(100);
-	if (close(fd_D) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", fd_D), exit(100);
-	return (0);
+		if ((close(fd_O) == -1) || (close(fd_D) == -1))
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_O), exit(100);
+		return (0);
 }
