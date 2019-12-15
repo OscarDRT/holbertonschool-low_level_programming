@@ -1,6 +1,28 @@
 #include "lists.h"
 
 /**
+ * getnodeindex - function that returns the nth node of a linked list
+ * @head: head of the list
+ * @index: index of the node, starting from 0
+ * Return: node whit index
+ */
+dlistint_t *getnodeindex(dlistint_t *head, unsigned int index)
+{
+	dlistint_t *aux = head;
+	unsigned int count = 0;
+
+	while (aux)
+	{
+		if (head == NULL)
+			return (NULL);
+		if (count == index)
+			return (aux);
+		count++;
+		aux = aux->next;
+	}
+	return (aux);
+}
+/**
  * insert_dnodeint_at_index - function that inserts
  * a new node at a given position
  * @h: head of the list
@@ -10,29 +32,35 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *aux = *h, *store_next;
+	dlistint_t *new_node, *aux = *h;
 	unsigned int count = 0;
 
 	new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
+	if (h == NULL || new_node == NULL)
 		return (NULL);
+	while (aux)
+	{
+		count++;
+		aux = aux->next;
+	}
 	if (idx == 0)
-		add_dnodeint(h, n);
+		new_node = add_dnodeint(h, n);
 	else
 	{
-		while (count < idx - 1)
+		if (count == idx)
+			new_node = add_dnodeint_end(h, n);
+		else
 		{
-			if (aux->next == NULL)
+			aux = getnodeindex(*h, idx);
+			if (aux == NULL)
 				return (NULL);
-			aux = aux->next;
-			count++;
+			new_node->next = aux;
+			new_node->prev = aux->prev;
+			aux->prev = new_node;
+			aux = new_node->prev;
+			aux->next = new_node;
+			new_node->n = n;
 		}
-		store_next = aux->next;
-		aux->next = new_node;
-		new_node->prev = aux;
-		new_node->next = store_next;
-		store_next->prev = new_node;
-		new_node->n = n;
 	}
 	return (new_node);
 }
