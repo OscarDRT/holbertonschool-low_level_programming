@@ -3,18 +3,18 @@
 /**
  * print_array - print array
  * @array: array
- * @size: size
- * @i: beggining
+ * @left: start print array
+ * @rigth: end of printing array
  */
-void print_array(int *array, int size, int i)
+void print_array(int *array, int left, int rigth)
 {
 	printf("Searching in array: ");
-	while (i < size)
+	while (left <= rigth)
 	{
-		printf("%d", array[i]);
-			if (i != (int) size - 1)
+		printf("%d", array[left]);
+			if (left != (int)rigth)
 				printf(", ");
-	i++;
+	left++;
 	}
 	printf("\n");
 }
@@ -29,27 +29,24 @@ void print_array(int *array, int size, int i)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int left = 0, rigth = size, middle = 0;
+	int l, r, m;
 
-	if (!array)
-		return (-1);
-	left = 0;
-	rigth = (int)size - 1;
-	print_array(array, (int)size, 0);
-	do {
-		middle = (left + rigth) / 2;
-		if (array[middle] < value)
+	l = 0;
+	r = (int)size - 1;
+	while (l <= r)
+	{
+		print_array(array, l, r);
+		m = (l + r) / 2;
+		if (array[m] < value)
 		{
-			left = middle + 1;
-			print_array(array, rigth + 1, middle + 1);
+			l = m + 1;
 		}
-		else if (array[middle] > value)
+		else if (array[m] > value)
 		{
-			rigth = middle - 1;
-			print_array(array, (rigth + 1), 0);
+			r = m - 1;
 		}
 		else
-			return (middle);
-	} while (left <= rigth);
+			return (m);
+	}
 	return (-1);
 }
